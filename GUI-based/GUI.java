@@ -75,7 +75,7 @@ class GUI{
         ovrePanel.add(antLevende);
 
         // ActionListener som skal utfores naar startknappen benyttes
-        // her skjer det mange ting, forst saa sjekkes det om brukeren har trykket paa startknappen
+        // forst saa sjekkes det om brukeren har trykket paa startknappen
         // tidligere, eller at brukeren ikke har satt noen celler til aa leve, isaafall gjor startknappen ingenting.
         // dersom ingen av disse oppfylles, saa brukes controller sine metoder til aa opprette og koble sammen alle cellene
         // i et rutenett gjennom modell-klassen, speilet i forhold til hvilke celler brukeren har satt til aa vaere levende. 

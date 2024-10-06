@@ -1,6 +1,6 @@
 
 
-// klassen Model som har Celle og Rutenett med nodvendige metoder fra oblig1 som indre klasser
+// klassen Model som har Celle og Rutenett med nodvendige metoder
 // Modellen skal fungere som en ekstern kopi av GUI'en sitt rutenett, og den skal
 // behandle all beregning, sammensetning og konfigurasjon til en celle og et rutenett.
 // Controller skal dermed viderefore disse resultatene/infoen til det visuelle som blir fremstilt for brukeren gjennom guien
@@ -140,15 +140,34 @@ class Model{
 
         public void settNaboer(int rad, int kolonne){
 
+            Celle[] naboer = new Celle[9];
+
             Celle nabo1 = hentCelle(rad - 1, kolonne - 1);
+            naboer[0] = nabo1;
+
             Celle nabo2 = hentCelle(rad - 1, kolonne);
+            naboer[1] = nabo2;
+
             Celle nabo3 = hentCelle(rad - 1, kolonne + 1);
+            naboer[2] = nabo3;
+
             Celle nabo4 = hentCelle(rad, kolonne - 1);
+            naboer[3] = nabo4;
+
             Celle nabo5 = hentCelle(rad, kolonne + 1);
+            naboer[5] = nabo5;
+
             Celle nabo6 = hentCelle(rad + 1, kolonne - 1);
+            naboer[6] = nabo6;
+
             Celle nabo7 = hentCelle(rad + 1, kolonne);
+            naboer[7] = nabo7;
+
             Celle nabo8 = hentCelle(rad + 1, kolonne + 1);
+            naboer[8] = nabo8;
+
             Celle denneCellen = hentCelle(rad, kolonne);
+
 
         // Lager if-sjekker for aa sjekke hvorvidt naboene faktisk er celler
         // eller om de er utenfor "rekkevidde". Dersom naboene != null, altsaa
@@ -156,31 +175,11 @@ class Model{
         // Dersom en nabo = null, saa er den ikke innenfor rutenettet, og skal
         // ikke paavirke cellens oppdatering, og blir ikke lagt til som en nabo.
 
-            if (nabo1 != null){
-                denneCellen.leggTilNabo(nabo1);
+            for (int i = 0; i < naboer.length-1; i++){
+                if(naboer[i] != null){
+                    denneCellen.leggTilNabo(naboer[i]);
+                }
             }
-            if (nabo2 != null){
-                denneCellen.leggTilNabo(nabo2);
-            }
-            if (nabo3 != null){
-                denneCellen.leggTilNabo(nabo3);
-            }
-            if (nabo4 != null){
-                denneCellen.leggTilNabo(nabo4);
-            }
-            if (nabo5 != null){
-                denneCellen.leggTilNabo(nabo5);
-            }
-            if (nabo6 != null){
-                denneCellen.leggTilNabo(nabo6);
-            }
-            if (nabo7 != null){
-                denneCellen.leggTilNabo(nabo7);
-            }
-            if (nabo8 != null){
-                denneCellen.leggTilNabo(nabo8);
-            }
-
         }
 
         // Metode som kobler sammen hver enkelt celle via en for-lokke og bruk av settNaboer 

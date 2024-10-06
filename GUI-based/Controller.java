@@ -80,7 +80,6 @@ class Controller{
         }
     }
 
-    // identisk metode som ble brukt i oblig1, men gjenbruker den slik at gui'en skal faa tilgang paa oppdater()
     // teller levende naboer til alle celler, og oppdaterer deres status deretter
 
     public void oppdater(){
