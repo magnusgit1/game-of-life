@@ -10,6 +10,6 @@ In the command-line version, you will be asked to provide information about how 
 create the new generation of cells. In the GUI-version, a UI will be displayed, which allows you to click on which cells you want to start as dead or alive, a slidebar which decides 
 the speed of the generational changes, and a start/end button.
 
-### Installasjon
+### Installation
 
 clone using: git clone https://magnusgit1/game-of-life.git
