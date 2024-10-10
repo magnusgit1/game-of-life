@@ -75,15 +75,34 @@ class Rutenett{
 
     public void settNaboer(int rad, int kolonne){
 
+        Celle[] naboer = new Celle[9];
+
         Celle nabo1 = hentCelle(rad - 1, kolonne - 1);
+        naboer[0] = nabo1;
+
         Celle nabo2 = hentCelle(rad - 1, kolonne);
+        naboer[1] = nabo2;
+
         Celle nabo3 = hentCelle(rad - 1, kolonne + 1);
+        naboer[2] = nabo3;
+
         Celle nabo4 = hentCelle(rad, kolonne - 1);
+        naboer[3] = nabo4;
+
         Celle nabo5 = hentCelle(rad, kolonne + 1);
+        naboer[5] = nabo5;
+
         Celle nabo6 = hentCelle(rad + 1, kolonne - 1);
+        naboer[6] = nabo6;
+
         Celle nabo7 = hentCelle(rad + 1, kolonne);
+        naboer[7] = nabo7;
+
         Celle nabo8 = hentCelle(rad + 1, kolonne + 1);
+        naboer[8] = nabo8;
+
         Celle denneCellen = hentCelle(rad, kolonne);
+
 
     // Lager if-sjekker for aa sjekke hvorvidt naboene faktisk er celler
     // eller om de er utenfor "rekkevidde". Dersom naboene != null, altsaa
@@ -91,29 +110,10 @@ class Rutenett{
     // Dersom en nabo = null, saa er den ikke innenfor rutenettet, og skal
     // ikke paavirke cellens oppdatering, og blir ikke lagt til som en nabo.
 
-        if (nabo1 != null){
-            denneCellen.leggTilNabo(nabo1);
-        }
-        if (nabo2 != null){
-            denneCellen.leggTilNabo(nabo2);
-        }
-        if (nabo3 != null){
-            denneCellen.leggTilNabo(nabo3);
-        }
-        if (nabo4 != null){
-            denneCellen.leggTilNabo(nabo4);
-        }
-        if (nabo5 != null){
-            denneCellen.leggTilNabo(nabo5);
-        }
-        if (nabo6 != null){
-            denneCellen.leggTilNabo(nabo6);
-        }
-        if (nabo7 != null){
-            denneCellen.leggTilNabo(nabo7);
-        }
-        if (nabo8 != null){
-            denneCellen.leggTilNabo(nabo8);
+        for (int i = 0; i < naboer.length-1; i++){
+            if(naboer[i] != null){
+                denneCellen.leggTilNabo(naboer[i]);
+            }
         }
     }
 
